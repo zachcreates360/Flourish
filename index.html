@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flourish — Family Ritual · Boaz & Noah</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #4E7A5C;
+    --sage-light: #7DAD8A;
+    --sage-pale: #EEF5F0;
+    --gold: #B8892E;
+    --gold-light: #EDD98A;
+    --gold-pale: #FDF8EC;
+    --cream: #FAFAF6;
+    --ink: #1C2321;
+    --ink-soft: #3D4A3D;
+    --muted: #7A8E7A;
+    --card: #FFFFFF;
+    --border: #E0EAE0;
+    --sky: #3D7FA5;
+    --rose: #C4725A;
+    --boaz-color: #E07830;
+    --noah-color: #4E7A5C;
+    --mom-color: #9B5FA0;
+    --dad-color: #3D7FA5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; }
+
+  /* HEADER */
+  .header { background: var(--sage-pale); color: var(--ink); border-bottom: 2px solid var(--border); }
+  .header-top { display: grid; grid-template-columns: auto 1fr auto; align-items: stretch; }
+  .header-brand { padding: 22px 28px; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; gap: 5px; background: white; }
+  .flourish-mark { display: flex; align-items: center; gap: 10px; }
+  .flourish-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--sage), var(--sage-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .header-brand h1 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 900; letter-spacing: -1px; color: var(--ink); line-height: 1; }
+  .header-brand .subtitle { font-size: 11px; color: var(--muted); letter-spacing: 0.3px; }
+
+  /* MISSION STATEMENT — formatted to match document exactly */
+  .header-mission { padding: 20px 30px; display: flex; align-items: center; background: var(--sage-pale); }
+  .mission-block { max-width: 580px; }
+  .mission-headline { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; font-style: italic; color: var(--ink); line-height: 1.5; margin-bottom: 10px; }
+  .mission-core { font-family: 'DM Sans', sans-serif; font-size: 13px; font-style: normal; font-weight: 400; color: var(--ink-soft); line-height: 1.9; margin-bottom: 8px; }
+  .mission-core p { margin-bottom: 3px; }
+  .mission-italic { font-family: 'Fraunces', serif; font-size: 13px; font-style: italic; color: var(--sage); margin-bottom: 6px; }
+  .mission-bullets { font-family: 'DM Sans', sans-serif; font-size: 12px; font-style: normal; color: var(--ink-soft); line-height: 1.85; padding-left: 14px; margin-bottom: 8px; }
+  .mission-bullets li { margin-bottom: 1px; }
+  .mission-scripture { font-family: 'Fraunces', serif; font-size: 12px; font-style: italic; font-weight: 600; color: var(--gold); line-height: 1.7; margin-top: 8px; border-top: 1px solid var(--border); padding-top: 8px; }
+
+  .header-location { padding: 18px 22px; border-left: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; min-width: 140px; text-align: center; background: white; }
+  .loc-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+  .loc-season { font-size: 11px; color: var(--muted); }
+  .sports-row { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; margin-top: 3px; }
+  .sport-chip { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 20px; background: var(--sage-pale); color: var(--sage); }
+
+  /* BOYS BANNER */
+  .boys-banner { display: grid; grid-template-columns: 1fr 1fr; background: white; border-bottom: 2px solid var(--border); }
+  .boy-panel { display: flex; align-items: center; gap: 14px; padding: 14px 22px; }
+  .boy-panel:first-child { border-right: 1px solid var(--border); }
+  .boy-emoji { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+  .boy-emoji.boaz { background: #FFF0E0; }
+  .boy-emoji.noah { background: #E8F5E9; }
+  .boy-name { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--ink); }
+  .boy-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .boy-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+  .btag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; background: var(--sage-pale); color: var(--sage); }
+
+  /* MAIN */
+  .main { padding: 24px 22px; max-width: 1080px; margin: 0 auto; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* RITUAL STRUCTURE — consistent icon branding */
+  .ritual-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 12px; margin-bottom: 28px; }
+  .ritual-step { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 18px; position: relative; }
+  .ritual-step.open { border-top: 3px solid var(--gold); }
+  .ritual-step.play { border-top: 3px solid var(--sage); }
+  .ritual-step.close { border-top: 3px solid var(--sky); }
+  .step-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+  .step-tag.open { background: var(--gold-pale); color: var(--gold); }
+  .step-tag.play { background: var(--sage-pale); color: var(--sage); }
+  .step-tag.close { background: #EBF3FA; color: var(--sky); }
+  .step-icon { width: 22px; height: 22px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+  .step-icon.open { background: linear-gradient(135deg, var(--sage), var(--sage-light)); }
+  .step-icon.play { background: linear-gradient(135deg, #7B9E4A, #A8C46A); }
+  .step-icon.close { background: linear-gradient(135deg, var(--sky), #6AAED0); }
+  .ritual-step h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
+  .ritual-step p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .time-pill { position: absolute; top: 14px; right: 14px; background: var(--sage-pale); color: var(--sage); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+  .open-cue { margin-top: 10px; background: var(--gold-pale); border-radius: 8px; padding: 8px 12px; font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--gold); text-align: center; }
+
+  /* SONG BOX */
+  .song-box { background: #2A4A38; border-radius: 18px; padding: 24px 28px; margin-bottom: 28px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; }
+  .song-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
+  .song-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: white; margin-bottom: 4px; }
+  .song-hint { font-size: 11px; color: rgba(255,255,255,0.35); font-style: italic; margin-bottom: 16px; }
+  .lyrics-block { font-family: 'Fraunces', serif; font-size: 16px; line-height: 2.3; }
+  .lyric-line { display: block; }
+  /* Lines 1-2: sage green */
+  .lyric-open { color: #9DC49D; font-weight: 600; }
+  /* Line 3: individual family colors */
+  .lyric-boaz { color: #F0A060; font-weight: 700; }
+  .lyric-noah { color: #80C894; font-weight: 700; }
+  .lyric-mom  { color: #D4A0D8; font-weight: 700; }
+  .lyric-dad  { color: #80B8D8; font-weight: 700; }
+  .lyric-sep  { color: rgba(255,255,255,0.5); font-weight: 400; }
+  /* Lines 4-5: teal/mint */
+  .lyric-middle { color: #7EC8C8; font-weight: 500; }
+  /* Lines 6-7: warm yellow/gold — moved here per feedback */
+  .lyric-close { color: #F5C842; font-weight: 600; }
+
+  .cue-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 18px 20px; min-width: 190px; }
+  .cue-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 8px; }
+  .cue-phrase { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: white; margin-bottom: 4px; }
+  .cue-action { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+  .cue-tip { font-size: 11px; color: rgba(255,255,255,0.4); font-style: italic; line-height: 1.6; }
+
+  /* MONTH NAV */
+  .month-nav { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .month-btn { padding: 8px 20px; border-radius: 10px; border: 1.5px solid var(--border); background: white; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s; color: var(--muted); }
+  .month-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
+
+  /* LEGEND */
+  .legend { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; align-items: center; }
+  .legend-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+
+  /* WEEK BLOCKS */
+  .week-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .week-block { background: white; border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .week-header { display: flex; align-items: center; justify-content: space-between; padding: 13px 20px; background: #2A4A38; color: white; cursor: pointer; user-select: none; }
+  .week-header-left h3 { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 600; color: white; }
+  .week-header-left h3 span { color: var(--gold-light); }
+  .week-theme { font-size: 11px; color: rgba(255,255,255,0.45); font-style: italic; margin-top: 2px; }
+  .week-toggle { font-size: 14px; transition: transform 0.3s; color: rgba(255,255,255,0.45); }
+  .week-toggle.open { transform: rotate(180deg); }
+  .week-body { display: none; padding: 14px; }
+  .week-body.open { display: block; }
+
+  /* DAY GRID */
+  .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; }
+  .day-card { border-radius: 11px; padding: 10px 9px; border: 1.5px solid transparent; position: relative; min-height: 200px; display: flex; flex-direction: column; }
+  .day-card.weekend { background: var(--gold-pale); border-color: #EDD98A; }
+  .day-card.weekday { background: var(--sage-pale); border-color: #C4DAC4; }
+  .day-card.friday { background: #F0F4FF; border-color: #BFD0F0; }
+  .day-card.skip { background: #F5F5F3; border-color: #E0E0DC; opacity: 0.72; }
+  .day-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+  .day-label { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .day-card.weekend .day-label { color: var(--gold); }
+  .day-card.weekday .day-label { color: var(--sage); }
+  .day-card.friday .day-label { color: #4060A8; }
+  .day-card.skip .day-label { color: #999; }
+  .day-date { font-size: 10px; color: var(--muted); margin-top: 1px; }
+
+  .sun-chip { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; cursor: default; }
+  .sun-row { display: flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+  .sun-row.rise { color: #C88A30; }
+  .sun-row.set  { color: #5070A0; }
+
+  .day-img { width: 100%; height: 52px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 7px; background: rgba(0,0,0,0.04); flex-shrink: 0; }
+  .day-activity { font-size: 11px; font-weight: 700; color: var(--ink); margin-bottom: 3px; line-height: 1.3; }
+  .day-desc { font-size: 10px; color: var(--muted); line-height: 1.45; flex: 1; }
+  .day-badges { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
+  .badge { font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 4px; }
+  .b-motor   { background: #FCE4EC; color: #C2185B; }
+  .b-lang    { background: #E8EAF6; color: #3949AB; }
+  .b-social  { background: #E8F5E9; color: #2E7D32; }
+  .b-sensory { background: #FFF3E0; color: #E65100; }
+  .b-cog     { background: #F3E5F5; color: #6A1B9A; }
+  .b-skip    { background: #F5F5F5; color: #9E9E9E; }
+  .b-season  { background: #E8F5E9; color: #2E7D32; }
+  .b-sport   { background: #E3F2FD; color: #1565C0; }
+  .b-fri     { background: #E8EEFF; color: #4060A8; }
+  .source-icon { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 50%; background: var(--sage-pale); border: 1px solid var(--sage-light); color: var(--sage); font-size: 8px; font-weight: 700; cursor: pointer; text-decoration: none; transition: background 0.2s; flex-shrink: 0; }
+  .source-icon:hover { background: var(--sage); color: white; }
+
+  /* CLOSE SCRIPTS */
+  .close-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 11px; margin-bottom: 28px; }
+  .close-card { background: white; border: 1.5px solid var(--border); border-left: 4px solid var(--sky); border-radius: 10px; padding: 13px 15px; }
+  .close-when { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--sky); margin-bottom: 6px; }
+  .close-card p { font-family: 'Fraunces', serif; font-style: italic; font-size: 12px; line-height: 1.65; color: var(--ink-soft); }
+
+  /* FEEDBACK */
+  .feedback-section { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 24px 26px; margin-bottom: 28px; }
+  .feedback-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+  .feedback-header h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--ink); margin: 0; }
+  .feedback-header p { font-size: 12px; color: var(--muted); margin: 4px 0 0; line-height: 1.5; }
+  .feedback-form { background: var(--sage-pale); border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; }
+  .feedback-form-row { display: grid; grid-template-columns: 110px 1fr 110px; gap: 10px; margin-bottom: 10px; }
+  .feedback-form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .feedback-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--sage); margin-bottom: 4px; }
+  .feedback-field { display: flex; flex-direction: column; }
+  .fb-select, .fb-input, .fb-textarea { padding: 9px 12px; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--ink); background: white; outline: none; transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
+  .fb-select:focus, .fb-input:focus, .fb-textarea:focus { border-color: var(--sage); }
+  .fb-textarea { resize: vertical; min-height: 62px; line-height: 1.5; }
+  .fb-rating { display: flex; gap: 6px; margin-top: 2px; }
+  .fb-star { font-size: 20px; cursor: pointer; opacity: 0.3; transition: opacity 0.15s, transform 0.1s; line-height: 1; }
+  .fb-star.active { opacity: 1; }
+  .fb-star:hover { transform: scale(1.2); }
+  .feedback-submit-row { display: flex; justify-content: flex-end; gap: 9px; margin-top: 4px; }
+  .fb-btn-clear { padding: 9px 16px; background: transparent; color: var(--muted); border: 1.5px solid var(--border); border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; }
+  .fb-btn-save { padding: 9px 22px; background: var(--sage); color: white; border: none; border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+  .fb-btn-save:hover { background: #3A6B4A; }
+  .fb-saved-msg { font-size: 11px; color: var(--sage); font-weight: 700; align-self: center; opacity: 0; transition: opacity 0.4s; }
+  .fb-saved-msg.show { opacity: 1; }
+  .feedback-log { margin-top: 4px; }
+  .feedback-log-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .feedback-log-title { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .fb-clear-all { font-size: 10px; color: var(--muted); background: none; border: none; cursor: pointer; text-decoration: underline; padding: 0; }
+  .feedback-empty { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; font-style: italic; }
+  .feedback-item { display: grid; grid-template-columns: auto auto 1fr auto; align-items: start; gap: 10px; padding: 12px 14px; border-radius: 10px; background: #FAFAF8; border: 1.5px solid var(--border); margin-bottom: 8px; }
+  .fb-item-who { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+  .fb-item-who.dad { background: #E8F0FE; color: #3949AB; }
+  .fb-item-who.mom { background: #FCE4EC; color: #C2185B; }
+  .fb-item-stars { font-size: 12px; white-space: nowrap; align-self: center; }
+  .fb-item-body { font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+  .fb-item-activity { font-size: 10px; font-weight: 700; color: var(--sage); margin-bottom: 3px; }
+  .fb-item-text { color: var(--ink); }
+  .fb-item-note { font-size: 11px; color: var(--muted); margin-top: 3px; font-style: italic; }
+  .fb-item-meta { font-size: 10px; color: var(--muted); white-space: nowrap; text-align: right; }
+  .fb-item-delete { font-size: 14px; color: var(--muted); background: none; border: none; cursor: pointer; padding: 0; line-height: 1; opacity: 0.4; transition: opacity 0.2s; align-self: start; }
+  .fb-item-delete:hover { opacity: 1; color: #C62828; }
+
+  /* CHEAT SHEET */
+  .cheat-sheet { background: #3A3010; color: white; border-radius: 18px; padding: 22px 26px; margin-bottom: 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 18px; }
+  .cheat-step-label { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 9px; }
+  .cheat-step-label.gold { color: var(--gold-light); }
+  .cheat-step-label.sage { color: var(--sage-light); }
+  .cheat-step-label.sky  { color: #85BDE0; }
+  .cheat-step p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.78); }
+  .cheat-reminder { background: rgba(255,255,255,0.07); border-radius: 11px; padding: 15px; }
+  .cheat-reminder p { font-family: 'Fraunces', serif; font-style: italic; font-size: 12px; line-height: 1.8; color: rgba(255,255,255,0.65); }
+
+  /* MONTH PLACEHOLDER */
+  .month-placeholder { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 30px; text-align: center; margin-bottom: 32px; }
+  .month-placeholder .ph-icon { font-size: 34px; margin-bottom: 11px; }
+  .month-placeholder h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+  .month-placeholder p { font-size: 13px; color: var(--muted); max-width: 400px; margin: 0 auto; line-height: 1.7; }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) { .days-grid { grid-template-columns: repeat(4, 1fr); } .day-card { min-height: auto; } }
+  @media (max-width: 640px) {
+    .header-top { grid-template-columns: 1fr; }
+    .header-brand { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .header-location { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); flex-direction: row; justify-content: flex-start; padding: 12px 18px; gap: 10px; }
+    .boys-banner { grid-template-columns: 1fr; }
+    .boy-panel:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    .ritual-grid { grid-template-columns: 1fr; }
+    .song-box { grid-template-columns: 1fr; }
+    .main { padding: 14px; }
+    .days-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="flourish-mark">
+        <div class="flourish-icon">🌱</div>
+        <h1>Flourish</h1>
+      </div>
+      <div class="subtitle">Your family's daily ritual — Boaz & Noah</div>
+    </div>
+
+    <!-- MISSION STATEMENT — formatted to match Family_Mission_Statement_8-22-2025.docx -->
+    <div class="header-mission">
+      <div class="mission-block">
+        <div class="mission-headline">We say and do things to allow our family to flourish.</div>
+        <div class="mission-core">
+          <p>We make Jesus important.</p>
+          <p>We love each other. We are kind to each other. We help each other. We care for each other.</p>
+        </div>
+        <div class="mission-italic">We are intentional about...</div>
+        <ul class="mission-bullets">
+          <li>Building trusting relationships through intentional bonding time together as a family and with each other.</li>
+          <li>Nurturing each others potential through quality time and learning.</li>
+          <li>Focusing on what improvements we need to make in ourselves and model the right behavior to each other.</li>
+          <li>Having fun and laughing together.</li>
+        </ul>
+        <div class="mission-italic">We remember to...</div>
+        <ul class="mission-bullets">
+          <li>See the good and treasure differences.</li>
+          <li>Pause, and respond based on principles and desired results.</li>
+          <li>Stay true, in the moment of choice, to your commitments.</li>
+          <li>Share stories.</li>
+          <li>Tell me more about that.</li>
+          <li>Goal: Go with them and ask later.</li>
+        </ul>
+        <div class="mission-scripture">Philippians 4:8 — Whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is commendable, if there is any excellence, if there is anything worthy of praise, think about these things.</div>
+      </div>
+    </div>
+
+    <div class="header-location">
+      <div style="font-size:22px;">📍</div>
+      <div>
+        <div class="loc-name">Shakopee, MN</div>
+        <div class="loc-season">🌨️→🌱 Snow melting</div>
+        <div class="sports-row">
+          <span class="sport-chip">🏒 Wild</span>
+          <span class="sport-chip">🏀 Wolves</span>
+          <span class="sport-chip">⚾ Twins Apr+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOYS BANNER - moved below calendar -->
+<!-- RITUAL STRUCTURE - moved below calendar -->
+
+<div class="main">
+
+  <!-- SONG -->
+  <div class="section-label">🎵 The Flourish Song — Opening Cue</div>
+  <div class="song-box">
+    <div>
+      <div class="song-eyebrow">Sung every time · simple bouncy tune · make it yours</div>
+      <div class="song-title">The Flourish Song</div>
+      <div class="song-hint">The repetition is the magic — same tune, every time</div>
+      <div class="lyrics-block">
+        <span class="lyric-line lyric-open">Flourish time, flourish time, here we go</span>
+        <span class="lyric-line lyric-open">Flourish time, flourish time, let's all grow</span>
+        <span class="lyric-line">
+          <span class="lyric-boaz">Boaz</span><span class="lyric-sep">, </span><span class="lyric-noah">Noah</span><span class="lyric-sep">, </span><span class="lyric-mom">Mom</span><span class="lyric-sep"> and </span><span class="lyric-dad">Dad</span>
+        </span>
+        <span class="lyric-line lyric-middle">Imagination leads the way</span>
+        <span class="lyric-line lyric-middle">Together we learn and play</span>
+        <span class="lyric-line lyric-close">See the good in what we do</span>
+        <span class="lyric-line lyric-close">Flourish time, flourish time, I love you 👉</span>
+      </div>
+    </div>
+    <div class="cue-box">
+      <div class="cue-label">Opening Cue</div>
+      <div class="cue-phrase">"Let's Flourish!"</div>
+      <div class="cue-action">🙌 Hands open in the air</div>
+      <div class="cue-tip">Even if you can't sing — sing anyway. Kids don't care. After 2 weeks, Boaz will start singing it himself.</div>
+    </div>
+  </div>
+
+  <!-- MONTH NAV -->
+  <div class="section-label">📅 March → May · Quarterly View</div>
+  <div class="month-nav">
+    <button class="month-btn active" onclick="showMonth('march', this)">🌨️ March</button>
+    <button class="month-btn" onclick="showMonth('april', this)">🌸 April</button>
+    <button class="month-btn" onclick="showMonth('may', this)">☀️ May</button>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <span class="legend-label">Milestones:</span>
+    <span class="badge b-motor">💪 Motor</span>
+    <span class="badge b-lang">💬 Language</span>
+    <span class="badge b-social">🤝 Social</span>
+    <span class="badge b-sensory">✋ Sensory</span>
+    <span class="badge b-cog">🧠 Cognitive</span>
+    <span class="badge b-fri">🌅 Week Opener</span>
+    <span style="margin-left:6px; font-size:10px; color:var(--muted);">
+      <span style="color:var(--sage); font-weight:700;">ⓘ</span> = Montessori source · 🌅🌇 = Shakopee sunrise/sunset
+    </span>
+  </div>
+
+  <!-- ══════════ MARCH ══════════ -->
+  <div id="month-march" class="week-grid">
+
+    <!-- WEEK 1: Fri Mar 6 – Thu Mar 12 -->
+    <div class="week-block">
+      <div class="week-header" onclick="toggleWeek(this)">
+        <div class="week-header-left">
+          <h3>Week 1 · Mar 6–12 · <span>Explorers & Detectives</span></h3>
+          <div class="week-theme">What can we discover right here in our own home?</div>
+        </div>
+        <div class="week-toggle open">▼</div>
+      </div>
+      <div class="week-body open">
+        <div class="days-grid">
+
+          <!-- FRI Mar 6 — OPENER -->
+          <div class="day-card friday">
+            <div class="day-header">
+              <div><div class="day-label">Fri</div><div class="day-date">Mar 6</div></div>
+              <div class="sun-chip">
+                <div class="sun-row rise">🌅 7:45a</div>
+                <div class="sun-row set">🌇 6:24p</div>
+              </div>
+            </div>
+            <div class="day-img">🌅</div>
+            <div class="day-activity">Week Kickoff!</div>
+            <div class="day-desc">"This weekend we're going on a DETECTIVE MISSION right here at home! What clues do you think we'll find, Boaz?" Build the anticipation.</div>
+            <div class="day-badges">
+              <span class="badge b-fri">🌅 Opener</span>
+              <span class="badge b-lang">💬 Language</span>
+            </div>
+          </div>
+
+          <!-- SAT Mar 7 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sat</div><div class="day-date">Mar 7</div></div>
+              <div class="sun-chip">
+                <div class="sun-row rise">🌅 7:43a</div>
+                <div class="sun-row set">🌇 6:26p</div>
+              </div>
+            </div>
+            <div class="day-img">🕵️</div>
+            <div class="day-activity">Room Detective</div>
+            <div class="day-desc">"Detectives, find something soft! Now something blue! Now something round!" Take turns giving each other clues.</div>
+            <div class="day-badges">
+              <span class="badge b-cog">🧠 Cognitive</span>
+              <span class="badge b-lang">💬 Language</span>
+              <a class="source-icon" href="https://www.montessorinature.com/" target="_blank" title="Montessori: observation & classification">ⓘ</a>
+            </div>
+          </div>
+
+          <!-- SUN Mar 8 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sun</div><div class="day-date">Mar 8</div></div>
+              <div class="sun-chip">
+                <div class="sun-row rise">🌅 7:41a</div>
+                <div class="sun-row set">🌇 7:27p</div>
+              </div>
+            </div>
+            <div class="day-img">🕷️</div>
+            <div class="day-activity">Spider-Man Webs</div>
+            <div class="day-desc">Tape yarn "webs" across a hallway upstairs. Boaz crawls through. Noah toddles. Dad is the villain.</div>
+            <div class="day-badges">
+              <span class="badge b-motor">💪 Motor</span>
+              <span class="badge b-social">🤝 Social</span>
+            </div>
+          </div>
+
+          <!-- MON Mar 9 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Mon</div><div class="day-date">Mar 9</div></div>
+              <div class="sun-chip">
+                <div class="sun-row rise">🌅 7:39a</div>
+                <div class="sun-row set">🌇 7:28p</div>
+              </div>
+            </div>
+            <div class="day-img">🚛</div>
+            <div class="day-activity">Truck Rescue</div>
+            <div class="day-desc">"The trucks are STUCK! Can you save them?" Hide trucks under a blanket or in a laundry basket. Scoop and rescue into a bowl.</div>
+            <div class="day-badges">
+              <span class="badge b-motor">💪 Motor</span>
+              <span class="badge b-cog">🧠 Cognitive</span>
+            </div>
+          </div>
+
+          <!-- TUE Mar 10 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Tue</div><div class="day-date">Mar 10</div></div>
+              <div class="sun-chip">
+                <div class="sun-row rise">🌅 7:37a</div>
+                <div class="sun-row set">🌇 7:30p</div>
+              </div>
+            </div>
+            <div class="day-img">📖</div>
+            <div class="day-activity">Story + Sound</div>
+            <div class="day-desc">Read 1 book. Every animal = make the sound together. Noah imitates Boaz imitating you.</div>
+            <div class="day-badges">
+              <span class="badge b-lang">💬 Language</span>
+              <a class="source-icon" href="https://www.montessorinature.com/" target="_blank" title="Montessori: picture books & vocabulary">ⓘ</a>
+            </div>
+          </div>
+
+          <!-- WED Mar 11 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Wed</div><div class="day-date">Mar 11</div></div>
+              <div class="sun-chip">
+                <div class="sun-row rise">🌅 7:35a</div>
+                <div class="sun-row set">🌇 7:31p</div>
+              </div>
+            </div>
+            <div class="day-img">🏒</div>
+            <div class="day-activity">Wild Hockey!</div>
+            <div class="day-desc">Roll socks into a ball. Use a spatula as a stick. Tape a goal on the floor. "GOAL for the Wild!" Both run and cheer.</div>
+            <div class="day-badges">
+              <span class="badge b-motor">💪 Motor</span>
+              <span class="badge b-sport">🏒 MN Wild</span>
+            </div>
+          </div>
+
+          <!-- THU Mar 12 — REST -->
+          <div class="day-card skip">
+            <div class="day-header">
+              <div><div class="day-label">Thu · Rest</div><div class="day-date">Mar 12</div></div>
+              <div class="sun-chip">
+                <div class="sun-row rise">🌅 7:33a</div>
+                <div class="sun-row set">🌇 7:33p</div>
+              </div>
+            </div>
+            <div class="day-img">😴</div>
+            <div class="day-activity">Guilt-Free Skip</div>
+            <div class="day-desc">No Flourish today. Rest up. Big week ahead!</div>
+            <div class="day-badges"><span class="badge b-skip">✌️ Rest</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 2: Fri Mar 13 – Thu Mar 19 -->
+    <div class="week-block">
+      <div class="week-header" onclick="toggleWeek(this)">
+        <div class="week-header-left">
+          <h3>Week 2 · Mar 13–19 · <span>Heroes & Helpers</span></h3>
+          <div class="week-theme">Spider-Man saves the day — and so do we</div>
+        </div>
+        <div class="week-toggle">▼</div>
+      </div>
+      <div class="week-body">
+        <div class="days-grid">
+
+          <!-- FRI Mar 13 — OPENER -->
+          <div class="day-card friday">
+            <div class="day-header">
+              <div><div class="day-label">Fri</div><div class="day-date">Mar 13</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:31a</div><div class="sun-row set">🌇 7:34p</div></div>
+            </div>
+            <div class="day-img">🌅</div>
+            <div class="day-activity">Hero Week Hype!</div>
+            <div class="day-desc">"Tomorrow we're going on a HERO MISSION right here at home! What superpower do you need, Boaz?" Build the excitement tonight.</div>
+            <div class="day-badges"><span class="badge b-fri">🌅 Opener</span><span class="badge b-lang">💬 Language</span></div>
+          </div>
+
+          <!-- SAT Mar 14 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sat</div><div class="day-date">Mar 14</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:29a</div><div class="sun-row set">🌇 7:36p</div></div>
+            </div>
+            <div class="day-img">🦸</div>
+            <div class="day-activity">Hero Cape Art</div>
+            <div class="day-desc">Draw a cape shape on paper. Both boys color it. "What's your superpower today?" Pin it on with a clip.</div>
+            <div class="day-badges"><span class="badge b-motor">💪 Fine Motor</span><span class="badge b-lang">💬 Language</span></div>
+          </div>
+
+          <!-- SUN Mar 15 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sun</div><div class="day-date">Mar 15</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:27a</div><div class="sun-row set">🌇 7:37p</div></div>
+            </div>
+            <div class="day-img">🕷️</div>
+            <div class="day-activity">Web Crawl</div>
+            <div class="day-desc">Tape yarn "webs" across the loft hallway. Crawl through without touching the lines. Noah toddling = automatic win.</div>
+            <div class="day-badges"><span class="badge b-motor">💪 Motor</span><span class="badge b-social">🤝 Social</span></div>
+          </div>
+
+          <!-- MON Mar 16 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Mon</div><div class="day-date">Mar 16</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:25a</div><div class="sun-row set">🌇 7:38p</div></div>
+            </div>
+            <div class="day-img">🤝</div>
+            <div class="day-activity">Helper Mission</div>
+            <div class="day-desc">"Heroes help! Can you help me carry this?" Simple task together — fold a towel, stack books, carry pillows upstairs.</div>
+            <div class="day-badges"><span class="badge b-social">🤝 Social</span><a class="source-icon" href="https://www.montessorinature.com/montessori-practical-life/" target="_blank" title="Montessori Practical Life">ⓘ</a></div>
+          </div>
+
+          <!-- TUE Mar 17 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Tue</div><div class="day-date">Mar 17</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:23a</div><div class="sun-row set">🌇 7:40p</div></div>
+            </div>
+            <div class="day-img">🍀</div>
+            <div class="day-activity">St. Patrick Hunt</div>
+            <div class="day-desc">Hide green objects around the loft. "Find all the green things!" Count them together. Happy St. Patrick's Day, heroes.</div>
+            <div class="day-badges"><span class="badge b-cog">🧠 Cognitive</span><span class="badge b-motor">💪 Motor</span></div>
+          </div>
+
+          <!-- WED Mar 18 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Wed</div><div class="day-date">Mar 18</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:21a</div><div class="sun-row set">🌇 7:41p</div></div>
+            </div>
+            <div class="day-img">🎈</div>
+            <div class="day-activity">Balloon Rocket</div>
+            <div class="day-desc">Blow up a balloon, let it go. "It's a rocket! Chase it!" Both boys run after it laughing. Do it again and again.</div>
+            <div class="day-badges"><span class="badge b-motor">💪 Motor</span><span class="badge b-social">🤝 Social</span></div>
+          </div>
+
+          <!-- THU Mar 19 — REST -->
+          <div class="day-card skip">
+            <div class="day-header">
+              <div><div class="day-label">Thu · Rest</div><div class="day-date">Mar 19</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:19a</div><div class="sun-row set">🌇 7:42p</div></div>
+            </div>
+            <div class="day-img">😴</div>
+            <div class="day-activity">Guilt-Free Skip</div>
+            <div class="day-desc">Rest day. You've earned it — heroes need recovery too.</div>
+            <div class="day-badges"><span class="badge b-skip">✌️ Rest</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 3: Fri Mar 20 – Thu Mar 26 -->
+    <div class="week-block">
+      <div class="week-header" onclick="toggleWeek(this)">
+        <div class="week-header-left">
+          <h3>Week 3 · Mar 20–26 · <span>Growing Things</span></h3>
+          <div class="week-theme">Seeds, sprouts, and things that grow — just like you! 🌱 Spring Equinox Mar 20</div>
+        </div>
+        <div class="week-toggle">▼</div>
+      </div>
+      <div class="week-body">
+        <div class="days-grid">
+
+          <!-- FRI Mar 20 — OPENER + Spring Equinox -->
+          <div class="day-card friday">
+            <div class="day-header">
+              <div><div class="day-label">Fri</div><div class="day-date">Mar 20</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:17a</div><div class="sun-row set">🌇 7:44p</div></div>
+            </div>
+            <div class="day-img">🌱</div>
+            <div class="day-activity">Spring Week Hype!</div>
+            <div class="day-desc">"Today is the FIRST DAY OF SPRING! This weekend we're planting something — what do you want it to grow into, Boaz?"</div>
+            <div class="day-badges"><span class="badge b-fri">🌅 Opener</span><span class="badge b-lang">💬 Language</span><span class="badge b-season">🌱 Equinox</span></div>
+          </div>
+
+          <!-- SAT Mar 21 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sat</div><div class="day-date">Mar 21</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:15a</div><div class="sun-row set">🌇 7:45p</div></div>
+            </div>
+            <div class="day-img">🌱</div>
+            <div class="day-activity">Plant a Seed</div>
+            <div class="day-desc">Use a cup and a bit of potting soil. Each boy plants one seed. Water together. Keep it on the windowsill — watch it grow all month.</div>
+            <div class="day-badges"><span class="badge b-cog">🧠 Cognitive</span><span class="badge b-season">🌱 Spring</span><a class="source-icon" href="https://www.montessorinature.com/" target="_blank" title="Montessori: care of plants">ⓘ</a></div>
+          </div>
+
+          <!-- SUN Mar 22 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sun</div><div class="day-date">Mar 22</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:13a</div><div class="sun-row set">🌇 7:46p</div></div>
+            </div>
+            <div class="day-img">🏀</div>
+            <div class="day-activity">Wolves Hoops</div>
+            <div class="day-desc">Laundry basket as the hoop. Rolled socks as the ball. Take turns shooting. "Boaz hits the game winner for the Wolves!"</div>
+            <div class="day-badges"><span class="badge b-motor">💪 Motor</span><span class="badge b-sport">🏀 MN Timberwolves</span></div>
+          </div>
+
+          <!-- MON Mar 23 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Mon</div><div class="day-date">Mar 23</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:11a</div><div class="sun-row set">🌇 7:48p</div></div>
+            </div>
+            <div class="day-img">🐛</div>
+            <div class="day-activity">Bug Hunt</div>
+            <div class="day-desc">Draw bugs on paper together. Cut them out. Hide them around the loft. "Find the spring bugs!" Count how many you found.</div>
+            <div class="day-badges"><span class="badge b-motor">💪 Fine Motor</span><span class="badge b-cog">🧠 Cognitive</span></div>
+          </div>
+
+          <!-- TUE Mar 24 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Tue</div><div class="day-date">Mar 24</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:09a</div><div class="sun-row set">🌇 7:49p</div></div>
+            </div>
+            <div class="day-img">💧</div>
+            <div class="day-activity">Pour & Fill</div>
+            <div class="day-desc">Set a bin or towel on the floor with cups and a small pitcher. "Fill the big one! Now pour it to the small one." Noah loves this.</div>
+            <div class="day-badges"><span class="badge b-sensory">✋ Sensory</span><span class="badge b-cog">🧠 Cognitive</span><a class="source-icon" href="https://themontessorinotebook.com" target="_blank" title="Montessori: pouring activities">ⓘ</a></div>
+          </div>
+
+          <!-- WED Mar 25 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Wed</div><div class="day-date">Mar 25</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:07a</div><div class="sun-row set">🌇 7:51p</div></div>
+            </div>
+            <div class="day-img">📓</div>
+            <div class="day-activity">Make a Book</div>
+            <div class="day-desc">Fold 3 papers into a little book. Boaz draws the story. You write what he says. "Tell me more about that…" Noah adds scribbles.</div>
+            <div class="day-badges"><span class="badge b-lang">💬 Language</span><a class="source-icon" href="https://www.montessorinature.com/" target="_blank" title="Montessori: storytelling">ⓘ</a></div>
+          </div>
+
+          <!-- THU Mar 26 — REST -->
+          <div class="day-card skip">
+            <div class="day-header">
+              <div><div class="day-label">Thu · Rest</div><div class="day-date">Mar 26</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:05a</div><div class="sun-row set">🌇 7:52p</div></div>
+            </div>
+            <div class="day-img">😴</div>
+            <div class="day-activity">Guilt-Free Skip</div>
+            <div class="day-desc">Rest day. Spring is here. You're doing great.</div>
+            <div class="day-badges"><span class="badge b-skip">✌️ Rest</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 4: Fri Mar 27 – Thu Apr 2 -->
+    <div class="week-block">
+      <div class="week-header" onclick="toggleWeek(this)">
+        <div class="week-header-left">
+          <h3>Week 4 · Mar 27–Apr 2 · <span>Stories We Tell</span></h3>
+          <div class="week-theme">Our family's stories — share them, act them out, draw them</div>
+        </div>
+        <div class="week-toggle">▼</div>
+      </div>
+      <div class="week-body">
+        <div class="days-grid">
+
+          <!-- FRI Mar 27 — OPENER -->
+          <div class="day-card friday">
+            <div class="day-header">
+              <div><div class="day-label">Fri</div><div class="day-date">Mar 27</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:03a</div><div class="sun-row set">🌇 7:53p</div></div>
+            </div>
+            <div class="day-img">🎭</div>
+            <div class="day-activity">Story Week Hype!</div>
+            <div class="day-desc">"This weekend we're going to put on a SHOW right here in the loft. Boaz, what's it going to be about?" Let the imagination run.</div>
+            <div class="day-badges"><span class="badge b-fri">🌅 Opener</span><span class="badge b-lang">💬 Language</span></div>
+          </div>
+
+          <!-- SAT Mar 28 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sat</div><div class="day-date">Mar 28</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 7:01a</div><div class="sun-row set">🌇 7:55p</div></div>
+            </div>
+            <div class="day-img">🎭</div>
+            <div class="day-activity">Puppet Show</div>
+            <div class="day-desc">Socks as puppets. Sit in a circle in the loft. Boaz makes up the story. Noah is the audience. Mom & Dad are cast members.</div>
+            <div class="day-badges"><span class="badge b-lang">💬 Language</span><span class="badge b-social">🤝 Social</span></div>
+          </div>
+
+          <!-- SUN Mar 29 -->
+          <div class="day-card weekend">
+            <div class="day-header">
+              <div><div class="day-label">Sun</div><div class="day-date">Mar 29</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 6:59a</div><div class="sun-row set">🌇 7:56p</div></div>
+            </div>
+            <div class="day-img">📸</div>
+            <div class="day-activity">Family Story</div>
+            <div class="day-desc">Pull up 3 old photos on your phone. Sit together in circle. "Boaz, what do you think was happening here?" Noah points at faces.</div>
+            <div class="day-badges"><span class="badge b-social">🤝 Social</span><span class="badge b-lang">💬 Language</span></div>
+          </div>
+
+          <!-- MON Mar 30 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Mon</div><div class="day-date">Mar 30</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 6:57a</div><div class="sun-row set">🌇 7:57p</div></div>
+            </div>
+            <div class="day-img">🏗️</div>
+            <div class="day-activity">Block Tower Race</div>
+            <div class="day-desc">Who can build the tallest tower? Count blocks together out loud. Noah knocks it down. Everyone wins. Build it again.</div>
+            <div class="day-badges"><span class="badge b-motor">💪 Motor</span><span class="badge b-cog">🧠 Cognitive</span></div>
+          </div>
+
+          <!-- TUE Mar 31 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Tue</div><div class="day-date">Mar 31</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 6:55a</div><div class="sun-row set">🌇 7:59p</div></div>
+            </div>
+            <div class="day-img">🚛</div>
+            <div class="day-activity">Truck Wash</div>
+            <div class="day-desc">Toy trucks + a bin with a little soapy water. Scrub, rinse with a cloth, dry. Noah loves the sensory. Boaz runs the operation.</div>
+            <div class="day-badges"><span class="badge b-sensory">✋ Sensory</span><span class="badge b-motor">💪 Motor</span></div>
+          </div>
+
+          <!-- WED Apr 1 -->
+          <div class="day-card weekday">
+            <div class="day-header">
+              <div><div class="day-label">Wed</div><div class="day-date">Apr 1</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 6:53a</div><div class="sun-row set">🌇 8:00p</div></div>
+            </div>
+            <div class="day-img">🌸</div>
+            <div class="day-activity">April is Here!</div>
+            <div class="day-desc">Sit in circle. "April is starting — what do you want to do this month, Boaz?" Draw one idea together. Transition to April.</div>
+            <div class="day-badges"><span class="badge b-lang">💬 Language</span><span class="badge b-social">🤝 Social</span></div>
+          </div>
+
+          <!-- THU Apr 2 — REST -->
+          <div class="day-card skip">
+            <div class="day-header">
+              <div><div class="day-label">Thu · Rest</div><div class="day-date">Apr 2</div></div>
+              <div class="sun-chip"><div class="sun-row rise">🌅 6:51a</div><div class="sun-row set">🌇 8:02p</div></div>
+            </div>
+            <div class="day-img">😴</div>
+            <div class="day-activity">Guilt-Free Skip</div>
+            <div class="day-desc">Rest day. March complete. Well done, Dad.</div>
+            <div class="day-badges"><span class="badge b-skip">✌️ Rest</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end march -->
+
+  <!-- APRIL -->
+  <div id="month-april" class="week-grid" style="display:none">
+    <div class="month-placeholder">
+      <div class="ph-icon">🌸</div>
+      <h3>April is Coming!</h3>
+      <p>April themes: <strong>Spring Indoors · Twins Baseball Season · Earth Day · Boaz's Pre-Birthday</strong><br><br>
+      Leave March feedback below. I'll build April's full calendar — including a fresh "What's Next" close script set and cheat sheet: <em>"When You Have Full Energy."</em></p>
+    </div>
+  </div>
+
+  <!-- MAY -->
+  <div id="month-may" class="week-grid" style="display:none">
+    <div class="month-placeholder">
+      <div class="ph-icon">☀️🎂</div>
+      <h3>May — Boaz Turns 4!</h3>
+      <p>May themes: <strong>Boaz's 4th Birthday · Warm Weather Play · End of Daycare Year</strong><br><br>
+      Complete March + April first. May's cheat sheet: <em>"When You Want to Go Deep."</em></p>
+    </div>
+  </div>
+
+  <!-- CLOSE SCRIPTS -->
+  <div class="section-label">🌟 "What's Next" Close — March Scripts · Pick One Each Day</div>
+  <div class="close-grid">
+    <div class="close-card"><div class="close-when">Weekend Morning</div><p>"Okay Boaz, okay Noah — after we Flourish we're going to build a fort together right here in the loft. Ready?"</p></div>
+    <div class="close-card"><div class="close-when">After Daycare</div><p>"Good job today, boys. Tonight after dinner we're going to build something — what do you want to build, Boaz?"</p></div>
+    <div class="close-card"><div class="close-when">Before Big Event</div><p>"Today is special — we're going to ___. Boaz, can you tell Noah what's happening?"</p></div>
+    <div class="close-card"><div class="close-when">Tired Evening</div><p>"Tonight we rest, and tomorrow — tomorrow we're going on an adventure right here at home. Sleep good, heroes."</p></div>
+    <div class="close-card"><div class="close-when">Sunday Reset</div><p>"This week we're going to ___. Boaz, you're in charge of reminding Dad. Can you do that?"</p></div>
+    <div class="close-card"><div class="close-when">Philippians Moment</div><p>"What's something true and lovely we saw today? Boaz, you first. Noah, show us with your hands."</p></div>
+  </div>
+
+  <!-- BOYS BANNER — moved below calendar -->
+  <div class="section-label">👦 Boaz & Noah — Who We're Flourishing For</div>
+  <div class="boys-banner" style="border-radius:16px; border:1.5px solid var(--border); margin-bottom:28px; overflow:hidden;">
+    <div class="boy-panel">
+      <div class="boy-emoji boaz">🦸</div>
+      <div>
+        <div class="boy-name">Boaz — turns 4 in May</div>
+        <div class="boy-desc">High energy · imagination-first · must be drawn in</div>
+        <div class="boy-tags">
+          <span class="btag">🕷️ Spider-Man</span>
+          <span class="btag">🚛 Monster Trucks</span>
+          <span class="btag">📚 Books</span>
+          <span class="btag">🏃 Movement</span>
+        </div>
+      </div>
+    </div>
+    <div class="boy-panel">
+      <div class="boy-emoji noah">👶</div>
+      <div>
+        <div class="boy-name">Noah — 18mo → 2 in August</div>
+        <div class="boy-desc">Sensory · watches & imitates · follows Boaz</div>
+        <div class="boy-tags">
+          <span class="btag">🍳 Cooking</span>
+          <span class="btag">👂 Listening</span>
+          <span class="btag">🖐️ Sensory</span>
+          <span class="btag">👦 Imitating</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RITUAL STRUCTURE — moved below calendar -->
+  <div class="section-label">✦ The Flourish Structure — Every Time</div>
+  <div class="ritual-grid" style="margin-bottom:28px;">
+    <div class="ritual-step open">
+      <span class="time-pill">1–2 min</span>
+      <div class="step-tag open">
+        <span class="step-icon open">🌱</span>
+        Open
+      </div>
+      <div class="open-cue">Let's Flourish! 🙌</div>
+      <p style="margin-top:10px;">Same cue every time. Both boys know: <em>this is our moment.</em> Boaz drawn in. Noah imitates. Magic starts.</p>
+    </div>
+    <div class="ritual-step play">
+      <span class="time-pill">5–7 min</span>
+      <div class="step-tag play">
+        <span class="step-icon play">🌿</span>
+        Imagination + Learning
+      </div>
+      <h3>The Activity</h3>
+      <p>One activity. Feels like play, not a lesson. Montessori-aligned. Home materials only. Boaz leads. Noah follows. Both grow.</p>
+    </div>
+    <div class="ritual-step close">
+      <span class="time-pill">1 min</span>
+      <div class="step-tag close">
+        <span class="step-icon close">✨</span>
+        What's Next
+      </div>
+      <h3>The Anchor</h3>
+      <p>One sentence. <em>"Tonight we're going to…"</em> Kids feel safe. Parents feel aligned. Done.</p>
+    </div>
+  </div>
+
+  <!-- FEEDBACK -->
+  <div class="section-label">💬 Mom & Dad Feedback — Shape What's Next</div>
+  <div class="feedback-section">
+
+    <div class="feedback-header">
+      <div>
+        <h3>How did it go? 🌱</h3>
+        <p>Log what worked, what flopped, and what Boaz and Noah loved. This shapes April.</p>
+      </div>
+    </div>
+
+    <!-- INPUT FORM -->
+    <div class="feedback-form">
+      <div class="feedback-form-row">
+        <div class="feedback-field">
+          <div class="feedback-label">Who</div>
+          <select class="fb-select" id="fb-who">
+            <option value="dad">Dad</option>
+            <option value="mom">Mom</option>
+          </select>
+        </div>
+        <div class="feedback-field">
+          <div class="feedback-label">Activity</div>
+          <select class="fb-select" id="fb-activity">
+            <option value="">— pick one —</option>
+            <option>Week Kickoff! (Fri Mar 6)</option>
+            <option>Room Detective (Sat Mar 7)</option>
+            <option>Spider-Man Webs (Sun Mar 8)</option>
+            <option>Truck Rescue (Mon Mar 9)</option>
+            <option>Story + Sound (Tue Mar 10)</option>
+            <option>Wild Hockey! (Wed Mar 11)</option>
+            <option>Hero Week Hype! (Fri Mar 13)</option>
+            <option>Hero Cape Art (Sat Mar 14)</option>
+            <option>Web Crawl (Sun Mar 15)</option>
+            <option>Helper Mission (Mon Mar 16)</option>
+            <option>St. Patrick Hunt (Tue Mar 17)</option>
+            <option>Balloon Rocket (Wed Mar 18)</option>
+            <option>Spring Week Hype! (Fri Mar 20)</option>
+            <option>Plant a Seed (Sat Mar 21)</option>
+            <option>Wolves Hoops (Sun Mar 22)</option>
+            <option>Bug Hunt (Mon Mar 23)</option>
+            <option>Pour &amp; Fill (Tue Mar 24)</option>
+            <option>Make a Book (Wed Mar 25)</option>
+            <option>Story Week Hype! (Fri Mar 27)</option>
+            <option>Puppet Show (Sat Mar 28)</option>
+            <option>Family Story (Sun Mar 29)</option>
+            <option>Block Tower Race (Mon Mar 30)</option>
+            <option>Truck Wash (Tue Mar 31)</option>
+            <option>April is Here! (Wed Apr 1)</option>
+            <option>General Feedback</option>
+          </select>
+        </div>
+        <div class="feedback-field">
+          <div class="feedback-label">Rating</div>
+          <div class="fb-rating" id="fb-stars">
+            <span class="fb-star" data-val="1">⭐</span>
+            <span class="fb-star" data-val="2">⭐</span>
+            <span class="fb-star" data-val="3">⭐</span>
+            <span class="fb-star" data-val="4">⭐</span>
+            <span class="fb-star" data-val="5">⭐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-form-row2">
+        <div class="feedback-field">
+          <div class="feedback-label">What worked 🙌</div>
+          <textarea class="fb-textarea" id="fb-worked" placeholder="e.g. Boaz LOVED the yarn webs — couldn't stop crawling through…"></textarea>
+        </div>
+        <div class="feedback-field">
+          <div class="feedback-label">What flopped / notes</div>
+          <textarea class="fb-textarea" id="fb-flopped" placeholder="e.g. Noah got frustrated, too short, needed more prep…"></textarea>
+        </div>
+      </div>
+
+      <div class="feedback-submit-row">
+        <span class="fb-saved-msg" id="fb-saved">✓ Saved!</span>
+        <button class="fb-btn-clear" onclick="clearFeedbackForm()">Clear</button>
+        <button class="fb-btn-save" onclick="saveFeedback()">Save Feedback ✓</button>
+      </div>
+    </div>
+
+    <!-- LOG -->
+    <div class="feedback-log">
+      <div class="feedback-log-header">
+        <div class="feedback-log-title">Feedback Log</div>
+        <div style="display:flex;gap:8px;">
+          <button class="fb-clear-all" onclick="exportFeedback()">📋 Copy all</button>
+          <button class="fb-clear-all" onclick="clearAllFeedback()">Clear all</button>
+        </div>
+      </div>
+      <div id="fb-log-list">
+        <div class="feedback-empty" id="fb-empty">No feedback yet — log your first session above! 🌱</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CHEAT SHEET -->
+  <div class="section-label">⚡ Parent Cheat Sheet — March: When You're Tired</div>
+  <div class="cheat-sheet">
+    <div class="cheat-step">
+      <div class="cheat-step-label gold">Step 1 — Open</div>
+      <p>Say <em>"Let's Flourish!"</em> 🙌<br>Sing the Flourish Song.<br>Sit on the floor with them.</p>
+    </div>
+    <div class="cheat-step">
+      <div class="cheat-step-label sage">Step 2 — Imagination + Learning</div>
+      <p>Pick one activity from this week. If Boaz isn't into it — follow his lead instead. <em>That's</em> the real activity.</p>
+    </div>
+    <div class="cheat-step">
+      <div class="cheat-step-label sky">Step 3 — What's Next</div>
+      <p>One sentence. "Tonight we're going to..." That's it. Done. You showed up. 🌱</p>
+    </div>
+    <div class="cheat-reminder">
+      <p>"Short beats perfect. 5 minutes done beats 20 minutes skipped."<br><br>Noah and Boaz don't need a perfect ritual. They need <em>you</em>.</p>
+    </div>
+  </div>
+
+</div><!-- end main -->
+
+<script>
+  function showMonth(month, btn) {
+    document.querySelectorAll('.week-grid').forEach(el => el.style.display = 'none');
+    document.getElementById('month-' + month).style.display = 'flex';
+    document.querySelectorAll('.month-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function toggleWeek(header) {
+    const body = header.parentElement.querySelector('.week-body');
+    const toggle = header.querySelector('.week-toggle');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    body.style.display = isOpen ? 'none' : 'block';
+    toggle.classList.toggle('open', !isOpen);
+  }
+
+  // ── Star rating ───────────────────────────────────────
+  let selectedRating = 0;
+  document.querySelectorAll('.fb-star').forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = parseInt(star.dataset.val);
+      updateStars(selectedRating);
+    });
+    star.addEventListener('mouseenter', () => updateStars(parseInt(star.dataset.val)));
+    star.addEventListener('mouseleave', () => updateStars(selectedRating));
+  });
+
+  function updateStars(val) {
+    document.querySelectorAll('.fb-star').forEach(s => {
+      s.classList.toggle('active', parseInt(s.dataset.val) <= val);
+    });
+  }
+
+  // ── Feedback — in-memory, Firefox-safe. Use "Copy all" to export. ──
+
+  // In-memory storage (Firefox-safe — no localStorage needed)
+  let _feedbackItems = [];
+
+  function loadFeedback() {
+    return _feedbackItems;
+  }
+
+  function saveFeedbackToStorage(items) {
+    _feedbackItems = items;
+  }
+
+  function saveFeedback() {
+    const who = document.getElementById('fb-who').value;
+    const activity = document.getElementById('fb-activity').value;
+    const worked = document.getElementById('fb-worked').value.trim();
+    const flopped = document.getElementById('fb-flopped').value.trim();
+
+    if (!worked && !flopped) return;
+
+    const entry = {
+      id: Date.now(),
+      who,
+      activity: activity || 'General',
+      rating: selectedRating,
+      worked,
+      flopped,
+      date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+    };
+
+    const items = loadFeedback();
+    items.unshift(entry);
+    saveFeedbackToStorage(items);
+    renderFeedbackLog(items);
+
+    const msg = document.getElementById('fb-saved');
+    msg.classList.add('show');
+    setTimeout(() => msg.classList.remove('show'), 2000);
+
+    clearFeedbackForm();
+  }
+
+  function clearFeedbackForm() {
+    document.getElementById('fb-activity').value = '';
+    document.getElementById('fb-worked').value = '';
+    document.getElementById('fb-flopped').value = '';
+    selectedRating = 0;
+    updateStars(0);
+  }
+
+  function deleteFeedback(id) {
+    const items = loadFeedback().filter(e => e.id !== id);
+    saveFeedbackToStorage(items);
+    renderFeedbackLog(items);
+  }
+
+  function clearAllFeedback() {
+    if (confirm('Clear all feedback entries? This cannot be undone.')) {
+      saveFeedbackToStorage([]);
+      renderFeedbackLog([]);
+    }
+  }
+
+  function exportFeedback() {
+    const items = loadFeedback();
+    if (items.length === 0) { alert('No feedback to export yet!'); return; }
+    const lines = items.map(e =>
+      `[${e.date}] ${e.who === 'dad' ? 'Dad' : 'Mom'} — ${e.activity}${e.rating ? ' (' + '★'.repeat(e.rating) + ')' : ''}\n` +
+      (e.worked ? `  🙌 ${e.worked}\n` : '') +
+      (e.flopped ? `  📝 ${e.flopped}\n` : '')
+    ).join('\n');
+    const full = `Flourish Feedback Log\n${'='.repeat(40)}\n\n${lines}`;
+    navigator.clipboard.writeText(full).then(() => {
+      alert('✓ Copied to clipboard! Paste into Notes, email, or wherever you like.');
+    }).catch(() => {
+      // Fallback: show in a textarea
+      const ta = document.createElement('textarea');
+      ta.value = full;
+      ta.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;height:60%;z-index:9999;padding:12px;font-size:13px;border-radius:8px;border:2px solid #2A4A38;';
+      document.body.appendChild(ta);
+      ta.select();
+      const close = document.createElement('button');
+      close.textContent = '✕ Close';
+      close.style.cssText = 'position:fixed;top:calc(50% - 200px);right:calc(10% + 8px);z-index:10000;background:#2A4A38;color:white;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;';
+      close.onclick = () => { document.body.removeChild(ta); document.body.removeChild(close); };
+      document.body.appendChild(close);
+    });
+  }
+
+  function renderFeedbackLog(items) {
+    const list = document.getElementById('fb-log-list');
+
+    if (items.length === 0) {
+      list.innerHTML = '<div class="feedback-empty">No feedback yet — log your first session above! 🌱</div>';
+      return;
+    }
+
+    list.innerHTML = items.map(e => `
+      <div class="feedback-item">
+        <span class="fb-item-who ${e.who}">${e.who === 'dad' ? 'Dad' : 'Mom'}</span>
+        <span class="fb-item-stars">${e.rating ? '⭐'.repeat(e.rating) : '—'}</span>
+        <div class="fb-item-body">
+          <div class="fb-item-activity">${e.activity}</div>
+          ${e.worked ? `<div class="fb-item-text">🙌 ${e.worked}</div>` : ''}
+          ${e.flopped ? `<div class="fb-item-note">📝 ${e.flopped}</div>` : ''}
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+          <div class="fb-item-meta">${e.date}</div>
+          <button class="fb-item-delete" onclick="deleteFeedback(${e.id})" title="Delete">✕</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // Init: week 1 open, rest collapsed
+  document.querySelectorAll('.week-body').forEach((body, i) => {
+    body.style.display = i === 0 ? 'block' : 'none';
+  });
+
+  // Init feedback log on load
+  renderFeedbackLog(loadFeedback());
+</script>
+</body>
+</html>
